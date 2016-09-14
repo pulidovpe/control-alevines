@@ -1,0 +1,910 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.11.1deb2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 10-03-2014 a las 10:55:22
+-- Versión del servidor: 5.5.35
+-- Versión de PHP: 5.4.4-14+deb7u8
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de datos: `piscicola`
+--
+DROP DATABASE `piscicola`;
+CREATE DATABASE `piscicola` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `piscicola`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `acta`
+--
+
+CREATE TABLE IF NOT EXISTS `acta` (
+  `id_acta` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `fecha_entreg` date NOT NULL,
+  `id_fact` int(6) unsigned NOT NULL,
+  `cedula` int(10) NOT NULL,
+  `observaciones` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_acta`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+
+--
+-- Volcado de datos para la tabla `acta`
+--
+
+INSERT INTO `acta` (`id_acta`, `fecha_entreg`, `id_fact`, `cedula`, `observaciones`) VALUES
+(1, '2014-03-03', 1, 3349462, ''),
+(2, '2013-04-16', 2, 10922142, ''),
+(3, '2013-04-16', 3, 16145325, ''),
+(4, '2013-04-16', 4, 29923567, ''),
+(5, '2013-04-16', 5, 14343112, ''),
+(6, '2013-04-16', 6, 14345924, ''),
+(7, '2013-04-16', 7, 18544864, ''),
+(8, '2013-04-16', 8, 9877419, ''),
+(9, '2013-04-16', 9, 9877419, ''),
+(10, '2013-04-16', 10, 8168199, ''),
+(11, '2013-04-16', 11, 11755825, ''),
+(12, '2013-04-16', 12, 31458130, ''),
+(13, '0000-00-00', 13, 20000095, ''),
+(14, '0000-00-00', 14, 9872921, ''),
+(15, '0000-00-00', 15, 2234484, ''),
+(16, '0000-00-00', 16, 9877419, ''),
+(17, '0000-00-00', 17, 8779503, ''),
+(18, '0000-00-00', 18, 9685296, ''),
+(19, '0000-00-00', 19, 31411239, ''),
+(20, '0000-00-00', 20, 9877067, ''),
+(21, '2013-04-17', 21, 12585705, ''),
+(22, '2013-04-17', 22, 12585705, ''),
+(23, '0000-00-00', 85, 2234484, ''),
+(24, '0000-00-00', 86, 2234484, ''),
+(25, '0000-00-00', 87, 2234484, ''),
+(26, '0000-00-00', 87, 2234484, ''),
+(27, '0000-00-00', 89, 11755869, ''),
+(28, '0000-00-00', 90, 31549247, ''),
+(29, '0000-00-00', 91, 5071057, ''),
+(30, '0000-00-00', 92, 2234484, ''),
+(31, '0000-00-00', 93, 2234484, ''),
+(32, '0000-00-00', 94, 5071057, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `almacen`
+--
+
+CREATE TABLE IF NOT EXISTS `almacen` (
+  `id` tinyint(1) NOT NULL,
+  `descripcion` varchar(15) NOT NULL,
+  `existencia` int(11) NOT NULL,
+  `precio` float(6,2) NOT NULL,
+  `texto` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `almacen`
+--
+
+INSERT INTO `almacen` (`id`, `descripcion`, `existencia`, `precio`, `texto`) VALUES
+(1, 'Alevines', 4790522, 1.10, 'Alevines'),
+(2, 'Alevines2', 954758, 1.50, 'Alevines2'),
+(3, 'Juveniles', 1997298, 1.90, 'Juveniles'),
+(4, 'Empaques', 999937, 10.00, 'Empaques'),
+(5, 'Tempaque', 100, 20.00, 'Empaque de la Institución'),
+(6, 'Ttanque', 100, 100.00, 'Tanque de la Institución'),
+(7, 'Tcisterna', 10, 100.00, 'Cisterna de la Institución');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `depositos`
+--
+
+CREATE TABLE IF NOT EXISTS `depositos` (
+  `cod_dep` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `forma_pago` varchar(10) NOT NULL DEFAULT 'Efectivo',
+  `num_cheqdep` varchar(10) NOT NULL,
+  `fecha` date NOT NULL DEFAULT '0000-00-00',
+  `monto` int(11) NOT NULL DEFAULT '0',
+  `banco` varchar(11) NOT NULL DEFAULT 'TESORO',
+  `num_cta` varchar(20) NOT NULL DEFAULT '01630228722283002826',
+  `factura` int(6) unsigned NOT NULL,
+  PRIMARY KEY (`cod_dep`),
+  KEY `fecha` (`fecha`),
+  KEY `factura` (`factura`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+
+--
+-- Volcado de datos para la tabla `depositos`
+--
+
+INSERT INTO `depositos` (`cod_dep`, `forma_pago`, `num_cheqdep`, `fecha`, `monto`, `banco`, `num_cta`, `factura`) VALUES
+(1, 'Deposito', '228021727', '2013-01-02', 3451, 'TESORO', '01630228722283002826', 1),
+(2, 'Deposito', '228315487', '2013-01-21', 690, 'TESORO', '01630228722283002826', 2),
+(3, 'Deposito', '228924730', '2013-02-14', 2300, 'TESORO', '01630228722283002826', 3),
+(4, 'Deposito', '409512759', '2013-02-14', 7351, 'TESORO', '01630228722283002826', 4),
+(5, 'Deposito', '226697362', '2013-02-18', 1731, 'TESORO', '01630228722283002826', 5),
+(6, 'Deposito', '228939458', '2013-03-13', 231, 'TESORO', '01630228722283002826', 6),
+(7, 'Deposito', '228646473', '2013-03-22', 1869, 'TESORO', '01630228722283002826', 7),
+(8, 'Deposito', '228390624', '2013-03-20', 2300, 'TESORO', '01630228722283002826', 8),
+(9, 'Deposito', '22781561', '2013-03-28', 3451, 'TESORO', '01630228722283002826', 9),
+(10, 'Deposito', '228770602', '2013-03-28', 580, 'TESORO', '01630228722283002826', 10),
+(11, 'Deposito', '228580178', '2013-04-10', 4600, 'TESORO', '01630228722283002826', 11),
+(12, 'Deposito', '409435649', '2013-04-12', 13000, 'TESORO', '01630228722283002826', 12),
+(13, 'Deposito', '228715603', '2013-04-11', 231, 'TESORO', '01630228722283002826', 13),
+(14, 'Deposito', '228344404', '2013-03-20', 3150, 'TESORO', '01630228722283002826', 14),
+(15, 'Deposito', '228404591', '2013-04-17', 2300, 'TESORO', '01630228722283002826', 15),
+(16, 'Deposito', '228781561', '2013-03-27', 3451, 'TESORO', '01630228722283002826', 16),
+(17, 'Deposito', '228547297', '2013-04-02', 8400, 'TESORO', '01630228722283002826', 17),
+(18, 'Deposito', '228325842', '2013-04-16', 1260, 'TESORO', '01630228722283002826', 18),
+(19, 'Deposito', '228523306', '2013-04-16', 4600, 'TESORO', '01630228722283002826', 19),
+(20, 'Deposito', '228606563', '2013-04-16', 3150, 'TESORO', '01630228722283002826', 20),
+(21, 'Deposito', '15151515', '2013-04-16', 1777, 'TESORO', '01630228722283002826', 21),
+(22, 'Deposito', '25545477', '2013-04-17', 5750, 'TESORO', '01630228722283002826', 21),
+(23, 'Deposito', '22222222', '2013-04-14', 4600, 'TESORO', '01630228722283002826', 22),
+(24, 'Efectivo', '0000000000', '2013-04-17', 250, 'TESORO', '01630228722283002826', 23),
+(25, 'Deposito', '11444441', '2013-04-11', 130, 'TESORO', '01630228722283002826', 24),
+(26, 'Efectivo', '0000000000', '2013-10-09', 80, 'TESORO', '01630228722283002826', 25),
+(27, 'Efectivo', '0000000000', '2013-10-09', 80, 'TESORO', '01630228722283002826', 34),
+(28, 'Efectivo', '0000000000', '2013-10-09', 140, 'TESORO', '01630228722283002826', 38),
+(29, 'Efectivo', '0000000000', '2013-10-09', 80, 'TESORO', '01630228722283002826', 39),
+(30, 'Efectivo', '0000000000', '2013-10-09', 100, 'TESORO', '01630228722283002826', 40),
+(31, 'Efectivo', '0000000000', '2013-10-09', 130, 'TESORO', '01630228722283002826', 41),
+(32, 'Efectivo', '0000000000', '2013-10-09', 130, 'TESORO', '01630228722283002826', 49),
+(33, 'Efectivo', '0000000000', '2013-10-09', 130, 'TESORO', '01630228722283002826', 63),
+(34, 'Efectivo', '0000000000', '2013-10-09', 80, 'TESORO', '01630228722283002826', 65),
+(35, 'Efectivo', '0000000000', '2013-11-19', 30, 'TESORO', '01630228722283002826', 68),
+(36, 'Efectivo', '0000000000', '2013-11-19', 580, 'TESORO', '01630228722283002826', 85),
+(37, 'Efectivo', '0000000000', '2013-11-19', 5750, 'TESORO', '01630228722283002826', 86),
+(38, 'Deposito', '9090909090', '0000-00-00', 1000, 'TESORO', '01630228722283002826', 87),
+(39, 'Efectivo', '0000000000', '2014-03-02', 1195, 'TESORO', '01630228722283002826', 89),
+(40, 'Efectivo', '0000000000', '2014-03-02', 880, 'TESORO', '01630228722283002826', 90),
+(41, 'Deposito', '3424324324', '2014-03-02', 746, 'TESORO', '01630228722283002826', 91),
+(42, 'Deposito', '3333333333', '2014-03-02', 880, 'TESORO', '01630228722283002826', 91),
+(43, 'Deposito', '44444', '2014-03-02', 130, 'TESORO', '01630228722283002826', 92),
+(44, 'Deposito', '33333', '0000-00-00', 130, 'TESORO', '01630228722283002826', 93),
+(45, 'Efectivo', '0000000000', '2014-03-03', 1490, 'TESORO', '01630228722283002826', 94),
+(46, 'Efectivo', '0000000000', '2014-03-09', 30, 'TESORO', '01630228722283002826', 95),
+(47, 'Efectivo', '0000000000', '2014-03-09', 30, 'TESORO', '01630228722283002826', 98),
+(48, 'Efectivo', '0000000000', '2014-03-09', 30, 'TESORO', '01630228722283002826', 98),
+(49, 'Efectivo', '0000000000', '2014-03-09', 70, 'TESORO', '01630228722283002826', 101);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `donaciones`
+--
+
+CREATE TABLE IF NOT EXISTS `donaciones` (
+  `id_donativo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `fecha_don` date NOT NULL,
+  `cedula` int(10) NOT NULL,
+  `cant_alev1` int(11) NOT NULL,
+  `cant_alev2` int(11) NOT NULL,
+  `cant_juve` int(11) NOT NULL,
+  PRIMARY KEY (`id_donativo`),
+  KEY `cedula` (`cedula`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `donaciones`
+--
+
+INSERT INTO `donaciones` (`id_donativo`, `fecha_don`, `cedula`, `cant_alev1`, `cant_alev2`, `cant_juve`) VALUES
+(1, '2013-04-01', 5071057, 1500, 0, 0),
+(2, '2013-04-17', 3349462, 2500, 0, 0),
+(3, '2013-04-17', 3769539, 5000, 0, 0),
+(4, '2013-04-17', 12585705, 2500, 0, 0),
+(5, '2013-10-09', 2234484, 1500, 0, 0),
+(6, '2014-03-09', 3769539, 250, 250, 150);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `factura`
+--
+
+CREATE TABLE IF NOT EXISTS `factura` (
+  `id_fact` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `ced_prod` int(10) NOT NULL,
+  `compra1` smallint(7) NOT NULL,
+  `compra2` smallint(7) NOT NULL,
+  `compra3` smallint(7) NOT NULL,
+  `compra4` smallint(7) NOT NULL,
+  `precio1` float(10,2) NOT NULL,
+  `precio2` float(10,2) NOT NULL,
+  `precio3` float(10,2) NOT NULL,
+  `precio4` float(10,2) NOT NULL,
+  `transporte` smallint(7) NOT NULL,
+  `total` float(10,2) NOT NULL,
+  PRIMARY KEY (`id_fact`),
+  KEY `fecha` (`fecha`),
+  KEY `ced_prod` (`ced_prod`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=102 ;
+
+--
+-- Volcado de datos para la tabla `factura`
+--
+
+INSERT INTO `factura` (`id_fact`, `fecha`, `ced_prod`, `compra1`, `compra2`, `compra3`, `compra4`, `precio1`, `precio2`, `precio3`, `precio4`, `transporte`, `total`) VALUES
+(1, '2013-01-02', 3349462, 3000, 0, 15, 0, 3301.00, 0.00, 150.00, 0.00, 0, 3451.00),
+(2, '2013-01-21', 10922142, 600, 0, 3, 0, 660.00, 0.00, 30.00, 0.00, 0, 690.00),
+(3, '2013-02-14', 16145325, 2000, 0, 10, 0, 2200.00, 0.00, 100.00, 0.00, 0, 2300.00),
+(4, '2013-02-15', 29923567, 6391, 0, 32, 0, 7031.00, 0.00, 320.00, 0.00, 0, 7351.00),
+(5, '2013-02-18', 14343112, 1500, 0, 8, 0, 1651.00, 0.00, 80.00, 0.00, 0, 1731.00),
+(6, '2013-03-13', 14345924, 200, 0, 1, 0, 221.00, 0.00, 10.00, 0.00, 0, 231.00),
+(7, '2013-03-22', 18544864, 1617, 0, 9, 0, 1779.00, 0.00, 90.00, 0.00, 0, 1869.00),
+(8, '2013-03-20', 9877419, 2000, 0, 10, 0, 2200.00, 0.00, 100.00, 0.00, 0, 2300.00),
+(9, '2013-03-28', 9877419, 3000, 0, 15, 0, 3301.00, 0.00, 150.00, 0.00, 0, 3451.00),
+(10, '2013-03-28', 8168199, 500, 0, 3, 0, 550.00, 0.00, 30.00, 0.00, 0, 580.00),
+(11, '2013-04-10', 11755825, 4000, 0, 20, 0, 4400.00, 0.00, 200.00, 0.00, 0, 4600.00),
+(12, '2013-04-12', 31458130, 4000, 4000, 100, 0, 4400.00, 7600.00, 1000.00, 0.00, 0, 13000.00),
+(13, '2013-04-11', 20000095, 200, 0, 1, 0, 221.00, 0.00, 10.00, 0.00, 0, 231.00),
+(14, '2013-03-20', 9872921, 0, 1500, 30, 0, 0.00, 2850.00, 300.00, 0.00, 0, 3150.00),
+(15, '2013-04-17', 2234484, 2000, 0, 10, 0, 2200.00, 0.00, 100.00, 0.00, 0, 2300.00),
+(16, '2013-03-28', 9877419, 3000, 0, 15, 0, 3301.00, 0.00, 150.00, 0.00, 0, 3451.00),
+(17, '2013-04-02', 8779503, 0, 4000, 80, 0, 0.00, 7600.00, 800.00, 0.00, 0, 8400.00),
+(18, '2013-04-16', 9685296, 0, 600, 12, 0, 0.00, 1140.00, 120.00, 0.00, 0, 1260.00),
+(19, '2013-04-16', 31411239, 4000, 0, 20, 0, 4400.00, 0.00, 200.00, 0.00, 0, 4600.00),
+(20, '2013-04-17', 9877067, 0, 1500, 30, 0, 0.00, 2850.00, 300.00, 0.00, 0, 3150.00),
+(21, '2013-04-17', 12585705, 5000, 0, 25, 0, 5500.00, 0.00, 250.00, 0.00, 0, 5750.00),
+(22, '2013-04-17', 12585705, 4000, 0, 20, 0, 4400.00, 0.00, 200.00, 0.00, 0, 4600.00),
+(23, '2013-04-17', 3769539, 0, 0, 25, 0, 0.00, 0.00, 250.00, 0.00, 0, 250.00),
+(24, '2013-04-17', 12585705, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(25, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(26, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(27, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(28, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(29, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(30, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(31, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(32, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(33, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(34, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(35, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(36, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(37, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(38, '2013-10-09', 2234484, 0, 0, 14, 0, 0.00, 0.00, 140.00, 0.00, 0, 140.00),
+(39, '2013-10-09', 2234484, 0, 0, 0, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(40, '2013-10-09', 2234484, 0, 0, 10, 0, 0.00, 0.00, 100.00, 0.00, 0, 100.00),
+(41, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(42, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(43, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(44, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(45, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(46, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(47, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(48, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(49, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(50, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(51, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(52, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(53, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(54, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(55, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(56, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(57, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(58, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(59, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(60, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(61, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(62, '2013-10-09', 2234484, 0, 0, 13, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(63, '2013-10-09', 2234484, 0, 0, 0, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(64, '2013-10-09', 2234484, 0, 0, 0, 0, 0.00, 0.00, 130.00, 0.00, 0, 130.00),
+(65, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(66, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(67, '2013-10-09', 2234484, 0, 0, 8, 0, 0.00, 0.00, 80.00, 0.00, 0, 80.00),
+(68, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(69, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(70, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(71, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(72, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(73, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(74, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(75, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(76, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(77, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(78, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(79, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(80, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(81, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(82, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(83, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(84, '2013-11-19', 8779503, 0, 0, 3, 0, 0.00, 0.00, 30.00, 0.00, 0, 30.00),
+(85, '2013-11-19', 2234484, 500, 0, 3, 0, 550.00, 0.00, 30.00, 0.00, 0, 580.00),
+(86, '2013-11-19', 2234484, 5000, 0, 25, 0, 5500.00, 0.00, 250.00, 0.00, 0, 5750.00),
+(87, '2014-03-02', 2234484, 250, 250, 100, 6, 275.00, 375.00, 190.00, 60.00, 100, 1000.00),
+(88, '2014-03-02', 2234484, 250, 250, 100, 6, 275.00, 375.00, 190.00, 60.00, 100, 1000.00),
+(89, '2014-03-02', 11755869, 0, 500, 150, 6, 0.00, 750.00, 285.00, 60.00, 100, 1195.00),
+(90, '2014-03-02', 31549247, 0, 500, 0, 3, 0.00, 750.00, 0.00, 30.00, 100, 880.00),
+(91, '2014-03-03', 5071057, 0, 500, 0, 3, 0.00, 750.00, 0.00, 30.00, 100, 880.00),
+(92, '2014-03-03', 2234484, 0, 0, 0, 3, 0.00, 0.00, 0.00, 30.00, 100, 130.00),
+(93, '2014-03-03', 2234484, 0, 0, 0, 3, 0.00, 0.00, 0.00, 30.00, 100, 130.00),
+(94, '2014-03-03', 5071057, 250, 500, 150, 8, 275.00, 750.00, 285.00, 80.00, 100, 1490.00),
+(95, '2014-03-09', 2234484, 0, 0, 0, 3, 0.00, 0.00, 0.00, 30.00, 0, 30.00),
+(96, '2014-03-09', 2234484, 0, 0, 0, 3, 0.00, 0.00, 0.00, 30.00, 0, 30.00),
+(97, '2014-03-09', 2234484, 0, 0, 0, 3, 0.00, 0.00, 0.00, 30.00, 0, 30.00),
+(98, '2014-03-09', 2234484, 0, 0, 0, 3, 0.00, 0.00, 0.00, 30.00, 0, 30.00),
+(99, '2014-03-09', 2234484, 0, 0, 0, 3, 0.00, 0.00, 0.00, 30.00, 0, 30.00),
+(100, '2014-03-09', 2234484, 0, 0, 0, 3, 0.00, 0.00, 0.00, 30.00, 0, 30.00),
+(101, '2014-03-09', 3769539, 0, 0, 0, 7, 0.00, 0.00, 0.00, 0.00, 0, 70.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `lista_estados`
+--
+
+CREATE TABLE IF NOT EXISTS `lista_estados` (
+  `id` int(3) NOT NULL DEFAULT '0',
+  `opcion` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `lista_estados`
+--
+
+INSERT INTO `lista_estados` (`id`, `opcion`) VALUES
+(1, 'Amazonas'),
+(2, 'Anzoategui'),
+(3, 'Apure'),
+(4, 'Aragua'),
+(5, 'Barinas'),
+(6, 'Bolívar'),
+(7, 'Carabobo'),
+(8, 'Cojedes'),
+(9, 'Delta Amacuro'),
+(10, 'Falcon'),
+(11, 'Guárico'),
+(12, 'Lara'),
+(13, 'Mérida'),
+(14, 'Miranda'),
+(15, 'Monagas'),
+(16, 'Nueva Esparta'),
+(17, 'Portuguesa'),
+(18, 'Sucre'),
+(19, 'Táchira'),
+(20, 'Yaracuy'),
+(21, 'Zulia'),
+(22, 'Vargas');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `lista_municipios`
+--
+
+CREATE TABLE IF NOT EXISTS `lista_municipios` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `opcion` varchar(100) NOT NULL,
+  `relacion` int(3) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `relacion` (`relacion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=340 ;
+
+--
+-- Volcado de datos para la tabla `lista_municipios`
+--
+
+INSERT INTO `lista_municipios` (`id`, `opcion`, `relacion`) VALUES
+(1, 'Alto Orinoco', 1),
+(2, 'Atabapo', 1),
+(3, 'Atures', 1),
+(4, 'Autana', 1),
+(5, 'Manapiare', 1),
+(6, 'Maroa', 1),
+(7, 'Río Negro', 1),
+(8, 'Anaco', 2),
+(9, 'Aragua', 2),
+(10, 'Manuel Ezequiel Bruzual', 2),
+(11, 'Diego Bautista Urbaneja', 2),
+(12, 'Fernando Peñalver', 2),
+(13, 'Francisco del Carmen Carvajal', 2),
+(14, 'General Sir Arthur McGregor', 2),
+(15, 'Guanta', 2),
+(16, 'Independencia', 2),
+(17, 'José Gregorio Monagas', 2),
+(18, 'Juan Antonio Sotillo', 2),
+(19, 'Juan Manuel Cajigal', 2),
+(20, 'Libertad', 2),
+(21, 'Francisco de Miranda', 2),
+(22, 'Pedro María Freites', 2),
+(23, 'Píritu', 2),
+(24, 'San José de Guanipa', 2),
+(25, 'San Juan de Capistrano', 2),
+(26, 'Santa Ana', 2),
+(27, 'Simón Bolívar', 2),
+(28, 'Simón Rodríguez', 2),
+(29, 'Achaguas', 3),
+(30, 'Biruaca', 3),
+(31, 'Muñoz', 3),
+(32, 'Páez', 3),
+(33, 'Pedro Camejo', 3),
+(34, 'Rómulo Gallegos', 3),
+(35, 'San Fernando', 3),
+(36, 'Atanasio Girardot', 4),
+(37, 'Bolívar', 4),
+(38, 'Camatagua', 4),
+(39, 'Francisco Linares Alcántara', 4),
+(40, 'José Ángel Lamas', 4),
+(41, 'José Félix Ribas', 4),
+(42, 'José Rafael Revenga', 4),
+(43, 'Libertador', 4),
+(44, 'Mario Briceño Iragorry', 4),
+(45, 'Ocumare de la Costa de Oro', 4),
+(46, 'San Casimiro', 4),
+(47, 'San Sebastián', 4),
+(48, 'Santiago Mariño', 4),
+(49, 'Santos Michelena', 4),
+(50, 'Sucre', 4),
+(51, 'Tovar', 4),
+(52, 'Urdaneta', 4),
+(53, 'Zamora', 4),
+(54, 'Alberto Arvelo Torrealba', 5),
+(55, 'Andrés Eloy Blanco', 5),
+(56, 'Antonio Jos', 5),
+(57, 'Arismendi', 5),
+(58, 'Barinas', 5),
+(59, 'Bolívar', 5),
+(60, 'Cruz Paredes', 5),
+(61, 'Ezequiel Zamora', 5),
+(62, 'Obispos', 5),
+(63, 'Pedraza', 5),
+(64, 'Rojas', 5),
+(65, 'Sosa', 5),
+(66, 'Carona', 6),
+(67, 'Cede', 6),
+(68, 'El Callao', 6),
+(69, 'Gran Sabana', 6),
+(70, 'Heres', 6),
+(71, 'Piar', 6),
+(72, 'Angostura (Raul Leoni)', 6),
+(73, 'Roscio', 6),
+(74, 'Sifontes', 6),
+(75, 'Sucre', 6),
+(76, 'Padre Pedro Chien', 6),
+(77, 'Bejuma', 7),
+(78, 'Carlos Arvelo', 7),
+(79, 'Diego Ibarra', 7),
+(80, 'Guacara', 7),
+(81, 'Juan José Mora', 7),
+(82, 'Libertador', 7),
+(83, 'Los Guayos', 7),
+(84, 'Miranda', 7),
+(85, 'Montalbán', 7),
+(86, 'Naguanagua', 7),
+(87, 'Puerto Cabello', 7),
+(88, 'San Diego', 7),
+(89, 'San Joaquín', 7),
+(90, 'Valencia', 7),
+(91, 'Anzoátegui', 8),
+(92, 'Tinaquillo', 8),
+(93, 'Girardot', 8),
+(94, 'Lima Blanco', 8),
+(95, 'Pao de San Juan Bautista', 8),
+(96, 'Ricaurte', 8),
+(97, 'Rómulo Gallegos', 8),
+(98, 'San Carlos', 8),
+(99, 'Tinaco', 8),
+(100, 'Antonio Díaz', 9),
+(101, 'Casacoima', 9),
+(102, 'Pedernales', 9),
+(103, 'Tucupita', 9),
+(104, 'Acosta', 10),
+(105, 'Bolívar', 10),
+(106, 'Buchivacoa', 10),
+(107, 'Cacique Manaure', 10),
+(108, 'Carirubana', 10),
+(109, 'Colina', 10),
+(110, 'Dabajuro', 10),
+(111, 'Democracia', 10),
+(112, 'Falcon', 10),
+(113, 'Federación', 10),
+(114, 'Jacura', 10),
+(115, 'José Laurencio Silva', 10),
+(116, 'Los Taques', 10),
+(117, 'Mauroa', 10),
+(118, 'Miranda', 10),
+(119, 'Monseñor Iturriza', 10),
+(120, 'Palmasola', 10),
+(121, 'Petit', 10),
+(122, 'Píritu', 10),
+(123, 'San Francisco', 10),
+(124, 'Sucre', 10),
+(125, 'Tocópero', 10),
+(126, 'Unión', 10),
+(127, 'Urumaco', 10),
+(128, 'Zamora', 10),
+(129, 'Camaguán', 11),
+(130, 'Chaguaramas', 11),
+(131, 'El Socorro', 11),
+(132, 'José Félix Ribas', 11),
+(133, 'José Tadeo Monagas', 11),
+(134, 'Juan Germán Roscio', 11),
+(135, 'Julián Mellado', 11),
+(136, 'Las Mercedes', 11),
+(137, 'Leonardo Infante', 11),
+(138, 'Pedro Zaraza', 11),
+(139, 'Ortiz', 11),
+(140, 'San Gerónimo de Guayabal', 11),
+(141, 'San José de Guaribe', 11),
+(142, 'Santa María de Ipire', 11),
+(143, 'Sebastián Francisco de Miranda', 11),
+(144, 'Andrés Eloy Blanco', 12),
+(145, 'Crespo', 12),
+(146, 'Iribarren', 12),
+(147, 'Jiménez', 12),
+(148, 'Morán', 12),
+(149, 'Palavecino', 12),
+(150, 'Simón Planas', 12),
+(151, 'Torres', 12),
+(152, 'Urdaneta', 12),
+(153, 'Alberto Adriani', 13),
+(154, 'Andrés Bello', 13),
+(155, 'Antonio Pinto Salinas', 13),
+(156, 'Aricagua', 13),
+(157, 'Arzobispo Chacón', 13),
+(158, 'Campo Elías', 13),
+(159, 'Caracciolo Parra Olmedo', 13),
+(160, 'Cardenal Quintero', 13),
+(161, 'Guaraque', 13),
+(162, 'Julio César Salas', 13),
+(163, 'Justo Briceño', 13),
+(164, 'Libertador', 13),
+(165, 'Miranda', 13),
+(166, 'Obispo Ramos de Lora', 13),
+(167, 'Padre Noguera', 13),
+(168, 'Pueblo Llano', 13),
+(169, 'Rangel', 13),
+(170, 'Rivas Dávila', 13),
+(171, 'Santos Marquina', 13),
+(172, 'Sucre', 13),
+(173, 'Tovar', 13),
+(174, 'Tulio Febres Cordero', 13),
+(175, 'Zea', 13),
+(178, 'Acevedo', 14),
+(179, 'Andrés Bello', 14),
+(180, 'Baruta', 14),
+(181, 'Brión', 14),
+(182, 'Buroz', 14),
+(183, 'Carrizal', 14),
+(184, 'Chacao', 14),
+(185, 'Cristóbal Rojas', 14),
+(186, 'El Hatillo', 14),
+(187, 'Guaicaipuro', 14),
+(188, 'Independencia', 14),
+(189, 'Lander', 14),
+(190, 'Los Salias', 14),
+(191, 'Páez', 14),
+(192, 'Paz Castillo', 14),
+(193, 'Pedro Gual', 14),
+(194, 'Plaza', 14),
+(195, 'Simón Bolívar', 14),
+(196, 'Sucre', 14),
+(197, 'Urdaneta', 14),
+(198, 'Zamora', 14),
+(199, 'Acosta', 15),
+(200, 'Aguasay', 15),
+(201, 'Bolívar', 15),
+(202, 'Caripe', 15),
+(203, 'Cedeño', 15),
+(204, 'Ezequiel Zamora', 15),
+(205, 'Libertador', 15),
+(206, 'Maturín', 15),
+(207, 'Piar', 15),
+(208, 'Punceres', 15),
+(209, 'Santa Bárbara', 15),
+(210, 'Sotillo', 15),
+(211, 'Uracoa', 15),
+(212, 'Antolín del Campo', 16),
+(213, 'Arismendi', 16),
+(214, 'García', 16),
+(215, 'Gómez', 16),
+(216, 'Maneiro', 16),
+(217, 'Marcano', 16),
+(218, 'Mariño', 16),
+(219, 'Península de Macanao', 16),
+(220, 'Tubores', 16),
+(221, 'Villalba', 16),
+(222, 'Díaz', 16),
+(223, 'Agua Blanca', 17),
+(224, 'Araure', 17),
+(225, 'Esteller', 17),
+(226, 'Guanare', 17),
+(227, 'Guanarito', 17),
+(228, 'Monseñor José Vicente de Unda', 17),
+(229, 'Ospino', 17),
+(230, 'Páez', 17),
+(231, 'Papelón', 17),
+(232, 'San Genaro de Boconoíto', 17),
+(233, 'San Rafael de Onoto', 17),
+(234, 'Santa Rosalía', 17),
+(235, 'Sucre', 17),
+(236, 'Turén', 17),
+(237, 'Andrés Eloy Blanco', 18),
+(238, 'Andrés Mata', 18),
+(239, 'Arismendi', 18),
+(240, 'Benítez', 18),
+(241, 'Bermúdez', 18),
+(242, 'Bolívar', 18),
+(243, 'Cajigal', 18),
+(244, 'Cruz Salmerón Acosta', 18),
+(245, 'Libertador', 18),
+(246, 'Mariño', 18),
+(247, 'Mejía', 18),
+(248, 'Montes', 18),
+(249, 'Ribero', 18),
+(250, 'Sucre', 18),
+(251, 'Valdez', 18),
+(252, 'Andrés Bello', 19),
+(253, 'Antonio Rómulo Costa', 19),
+(254, 'Ayacucho', 19),
+(255, 'Bolívar', 19),
+(256, 'Cárdenas', 19),
+(257, 'Córdoba', 19),
+(258, 'Fernández Feo', 19),
+(259, 'Francisco de Miranda', 19),
+(260, 'García de Hevia', 19),
+(261, 'Guásimos', 19),
+(262, 'Independencia', 19),
+(263, 'Jáuregui', 19),
+(265, 'José María Vargas', 19),
+(266, 'Junín', 19),
+(267, 'Libertad', 19),
+(268, 'Libertador', 19),
+(269, 'Lobatera', 19),
+(270, 'Michelena', 19),
+(271, 'Panamericano', 19),
+(272, 'Pedro María Ureña', 19),
+(273, 'Rafael Urdaneta', 19),
+(274, 'Samuel Dari', 19),
+(275, 'San Cristóbal', 19),
+(276, 'Seboruco', 19),
+(277, 'Simón Rodríguez', 19),
+(278, 'Sucre', 19),
+(279, 'Torbes', 19),
+(280, 'Uribante', 19),
+(281, 'San Judas Tadeo', 19),
+(282, 'Andrés Bello', 20),
+(283, 'Boconó', 20),
+(284, 'Bolívar', 20),
+(285, 'Candelaria', 20),
+(286, 'Carache', 20),
+(287, 'Escuque', 20),
+(289, 'José Felipe Márquez Cañizalez', 20),
+(290, 'Juan Vicente Campos Elías', 20),
+(291, 'La Ceiba', 20),
+(292, 'Miranda', 20),
+(293, 'Monte Carmelo', 20),
+(294, 'Motatán', 20),
+(295, 'Pampán', 20),
+(296, 'Pampanito', 20),
+(297, 'Rafael Rangel', 20),
+(298, 'San Rafael de Carvajal', 20),
+(299, 'Sucre', 20),
+(300, 'Trujillo', 20),
+(301, 'Urdaneta', 20),
+(302, 'Valera', 20),
+(303, 'Vargas', 21),
+(304, 'Arístides Bastidas', 22),
+(305, 'Bolívar', 22),
+(306, 'Bruzual', 22),
+(307, 'Cocorote', 22),
+(308, 'Independencia', 22),
+(309, 'José Antonio Páez', 22),
+(310, 'La Trinidad', 22),
+(311, 'Manuel Monge', 22),
+(312, 'Nirgua', 22),
+(313, 'Peña', 22),
+(314, 'San Felipe', 22),
+(315, 'Sucre', 22),
+(316, 'Urachiche', 22),
+(317, 'José Joaquín Veroes', 22),
+(318, 'Almirante Padilla', 23),
+(319, 'Baralt', 23),
+(320, 'Cabimas', 23),
+(321, 'Catatumbo', 23),
+(322, 'Colón', 23),
+(323, 'Francisco Javier Pulgar', 23),
+(324, 'Páez', 23),
+(325, 'Jesús Enrique Losada', 23),
+(326, 'Jesús María Semprún', 23),
+(327, 'La Cañada de Urdaneta', 23),
+(328, 'Lagunillas', 23),
+(329, 'Machiques de Perijá', 23),
+(330, 'Mara', 23),
+(331, 'Maracaibo', 23),
+(332, 'Miranda', 23),
+(333, 'Rosario de Perijá', 23),
+(334, 'San Francisco', 23),
+(335, 'Santa Rita', 23),
+(336, 'Simón Bolívar', 23),
+(337, 'Sucre', 23),
+(338, 'Valmore Rodríguez', 23),
+(339, 'Libertador', 24);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productor`
+--
+
+CREATE TABLE IF NOT EXISTS `productor` (
+  `cedula` int(10) NOT NULL,
+  `nombres` varchar(30) NOT NULL,
+  `apellidos` varchar(25) NOT NULL,
+  `razons` varchar(5) NOT NULL,
+  `direccion` varchar(50) NOT NULL,
+  `telefono` varchar(20) NOT NULL,
+  `estados` varchar(15) NOT NULL,
+  `municipios` varchar(25) NOT NULL,
+  PRIMARY KEY (`cedula`),
+  KEY `estados` (`estados`),
+  KEY `municipios` (`municipios`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `productor`
+--
+
+INSERT INTO `productor` (`cedula`, `nombres`, `apellidos`, `razons`, `direccion`, `telefono`, `estados`, `municipios`) VALUES
+(2234484, 'RAFAEL MARIA', 'CASTILLO', 'V', 'Fundo "La Mapanare"', '0', 'Apure', 'San Fernando'),
+(3349462, 'ANGEL', 'VEGAS', 'V', 'Agropecuaria "Saray" ', '0', 'Apure', 'Biruaca'),
+(3743407, 'PEDRO', 'LESPE', 'V', 'Fundo "Las Trinitarias"', '0426-5430956', 'Apure', 'Biruaca'),
+(3769539, 'VICTOR', 'LISS', 'V', 'Llano Fresco', '0416-8076688', 'Apure', 'Biruaca'),
+(5071057, 'VICTOR', 'BELLO', 'V', 'Fundo "La Granjita 1"', '0424-3574025', 'Apure', 'Achaguas'),
+(5360976, 'OSMAR', 'QUERALES', 'V', 'Fundo "Los Tres Hermanos"', '0416-5101701', 'Apure', 'Pedro Camejo'),
+(5361400, 'BARTOLO', 'OSTO', 'V', 'Fundo "La Idea"', '0247-6895701', 'Apure', 'Achaguas'),
+(8168199, 'GLUBER', 'HERNANDEZ', 'V', 'Santa Rufina', '0414-4787892', 'Apure', 'Biruaca'),
+(8779503, 'FRANCISCO', 'GERRATANA', 'V', 'Finca "CAURA"', '0412-4924783', 'Guarico', 'Juan Germán Roscio'),
+(9591730, 'RAFAEL RICARDO', 'CARRASQUEL', 'V', 'Lechozal', '0426-7869246', 'Apure', 'Biruaca'),
+(9594701, 'YURMAR', 'SANCHEZ', 'V', 'Fundo "Los Totumos"', '0', 'Apure', 'Pedro Camejo'),
+(9685296, 'ROBERT', 'COLINA', 'V', 'Fundo "La BendiciÃ³n de Dios"', '0416-1414148', 'Apure', 'San Fernando'),
+(9872921, 'JORGE', 'GERLE', 'V', 'Granja "San Antonio"', '0416-2946982', 'Apure', 'San Fernando'),
+(9877067, 'MARIA', 'JIMENEZ', 'V', 'Fundo "Los Mangos"', '0424-3736547', 'Apure', 'San Fernando'),
+(9877419, 'ALCIDES', 'BOGGIO', 'V', 'Fundo "El Molino"', '0424-3664162', 'Apure', 'San Fernando'),
+(10922142, 'NEWTON', 'ESPAÃ‘A', 'V', 'Fundo "La Prosperidad"', '0414-4785072', 'Apure', 'Biruaca'),
+(11755825, 'PEDRO', 'SANCHEZ', 'V', 'Fundo "La BendiciÃ³n"', '0424-3664162', 'Apure', 'San Fernando'),
+(11755869, 'PABLO', 'FUENTES', 'V', 'Calle MuÃ±oz, NÂ° 186', '0424-3740656', 'Apure', 'San Fernando'),
+(12583743, 'ALEXIS', 'GARCIA', 'V', 'Av. Intercomunal, San Fernando/Biruaca', '0414-4747976', 'Apure', 'San Fernando'),
+(12585705, 'ABRAHAM', 'GARCIA', 'V', 'Urb. El Recreo, Sector 2', '0426-5155690', 'Apure', 'San Fernando'),
+(13255109, 'BARTOLO', 'ZERPA', 'V', 'Fundo "La Poderosa"', '0424-3756831', 'Apure', 'Biruaca'),
+(13636582, 'GABRIEL', 'MATTEY', 'V', 'Av. Miranda C/C Diamante', '0424-3840084', 'Apure', 'San Fernando'),
+(13937542, 'MAURICIO', 'ROJAS', 'V', 'Fundo "Las Mangas"', '0414-3351814', 'Apure', 'Biruaca'),
+(14343112, 'CASTOR', 'RODRIGUEZ', 'V', 'Fundo "Casa Nueva"', '0416-2182834', 'Apure', 'San Fernando'),
+(14345924, 'LENIN', 'GAMARRA', 'V', 'Valle de la Pascua', '0416-5413782', 'Guarico', 'Julián Mellado'),
+(15047668, 'CARLOS', 'BARRIO', 'V', 'Fundo "La Esperanza"', '0426-6477435', 'Apure', 'Achaguas'),
+(16145325, 'CARMELO', 'RAMIREZ', 'V', 'Fundo "La Parcela"', '0414-4648645', 'Guarico', 'Camaguán'),
+(17395439, 'JOSEM R.', 'RAAD ELÂ´D BASSI', 'V', 'Fundo "Arauca"', '0424-3450843', 'Apure', 'Biruaca'),
+(17851091, 'RAFAEL', 'BOLIVAR', 'V', 'Fundo "La Primavera"', '0416-2943857', 'Apure', 'San Fernando'),
+(18544864, 'JOEL', 'GUEVARA', 'V', 'Fundo "Mis Tres Tesoros"', '0426-7269602', 'Apure', 'San Fernando'),
+(20000095, 'INSTITUTO NACIONAL DE', 'INVESTIGACIONES AGRICOLAS', 'G', 'El LimÃ³n', '0', 'Aragua', 'Atanasio Girardot'),
+(21004781, 'ELIO', 'CORONA', 'V', 'Fundo "El PereÃ±o"', '0426-7491501', 'Apure', 'Biruaca'),
+(29923567, 'CONSEJO COMUNAL', '"SAN JOSE DEL ORINOCO"', 'J', 'Comunidad San JosÃ© del Orinoco', '046-3476142', 'Amazonas', 'Autana'),
+(31411239, 'COOPERATIVA', 'LOS UNANIMES 005 RL', 'J', 'Fundo Zamorano "Pedro Aldao"', '0426-8385015', 'Guarico', 'Sebastián Francisco de '),
+(31458130, 'COOPERATIVA', 'SANTA INES 09 RL', 'J', 'Fundo "Santa Ines"', '0248-4148861', 'Amazonas', 'Atures'),
+(31549247, 'ASOCIACION COOPERATIVA', 'INVERSIONES LA FE', 'J', 'Urb. Las Terrazas', '0426-7491501', 'Apure', 'Biruaca');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proforma`
+--
+
+CREATE TABLE IF NOT EXISTS `proforma` (
+  `id_fact` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `ced_prod` int(10) NOT NULL,
+  `compra1` smallint(7) NOT NULL,
+  `compra2` smallint(7) NOT NULL,
+  `compra3` smallint(7) NOT NULL,
+  `compra4` smallint(7) NOT NULL,
+  `precio1` float(10,2) NOT NULL,
+  `precio2` float(10,2) NOT NULL,
+  `precio3` float(10,2) NOT NULL,
+  `precio4` float(10,2) NOT NULL,
+  `transporte` smallint(7) NOT NULL,
+  `total` float(10,2) NOT NULL,
+  PRIMARY KEY (`id_fact`),
+  KEY `fecha` (`fecha`),
+  KEY `ced_prod` (`ced_prod`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Volcado de datos para la tabla `proforma`
+--
+
+INSERT INTO `proforma` (`id_fact`, `fecha`, `ced_prod`, `compra1`, `compra2`, `compra3`, `compra4`, `precio1`, `precio2`, `precio3`, `precio4`, `transporte`, `total`) VALUES
+(1, '2013-04-04', 15003003, 500, 150, 6, 0, 550.00, 285.00, 60.00, 0.00, 0, 895.00),
+(2, '2013-04-04', 18006006, 240, 200, 6, 0, 264.00, 380.00, 60.00, 0.00, 0, 704.00),
+(3, '2013-04-04', 14002002, 100, 150, 4, 0, 111.00, 285.00, 40.00, 0.00, 0, 436.00),
+(4, '2013-04-04', 18006006, 500, 200, 7, 0, 550.00, 380.00, 70.00, 0.00, 0, 1000.00),
+(5, '2013-04-04', 5361400, 240, 0, 2, 0, 264.00, 0.00, 20.00, 0.00, 0, 284.00),
+(6, '2014-03-02', 5071057, 250, 250, 150, 7, 275.00, 375.00, 285.00, 70.00, 0, 1105.00),
+(7, '2014-03-02', 3769539, 250, 250, 150, 7, 275.00, 375.00, 285.00, 70.00, 0, 1105.00),
+(8, '2014-03-02', 8168199, 250, 500, 150, 8, 275.00, 750.00, 285.00, 80.00, 0, 1490.00),
+(9, '2014-03-03', 2234484, 0, 500, 0, 3, 0.00, 750.00, 0.00, 30.00, 0, 880.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reposicion`
+--
+
+CREATE TABLE IF NOT EXISTS `reposicion` (
+  `id_reposicion` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `fecha_rep` date NOT NULL,
+  `cedula` int(10) NOT NULL,
+  `cant_alev1` int(11) NOT NULL,
+  `cant_alev2` int(11) NOT NULL,
+  `cant_juve` int(11) NOT NULL,
+  PRIMARY KEY (`id_reposicion`),
+  KEY `cedula` (`cedula`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `reposicion`
+--
+
+INSERT INTO `reposicion` (`id_reposicion`, `fecha_rep`, `cedula`, `cant_alev1`, `cant_alev2`, `cant_juve`) VALUES
+(1, '0000-00-00', 2234484, 0, 500, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `transporte`
+--
+
+CREATE TABLE IF NOT EXISTS `transporte` (
+  `id_transp` int(10) NOT NULL,
+  `cedula` int(10) NOT NULL,
+  `tipo_transp` int(10) NOT NULL,
+  `forma_transp` int(10) NOT NULL,
+  `placas` varchar(10) NOT NULL,
+  `fecha_transp` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `usuario` varchar(10) NOT NULL,
+  `clave` varchar(128) NOT NULL,
+  `tipo` tinyint(4) NOT NULL,
+  `nombre` varchar(25) NOT NULL,
+  `telefono` int(10) NOT NULL,
+  PRIMARY KEY (`usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`usuario`, `clave`, `tipo`, `nombre`, `telefono`) VALUES
+('12585705', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Abraham Garcia', 2147483647),
+('13489283', '1234', 2, 'Yennifer', 12345678),
+('99009009', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Usuario Normal', 2147483647),
+('usuario', '81dc9bdb52d04dc20036dbd8313ed055', 0, 'usuario desconocido', 2147483647),
+('usuario101', '123', 0, 'usuario desconocido', 1231231231),
+('usuario456', '123', 0, 'usuario456usuario456', 2147483647),
+('usuario789', '123', 0, 'usuario789usuario789', 12345678),
+('yuna', '1234', 2, 'yunaika', 2147483647);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

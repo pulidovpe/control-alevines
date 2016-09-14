@@ -1,0 +1,827 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Foro",
+				"ForoTema"
+			],
+			[
+				"foro",
+				"foroTemas"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"sub",
+				"subforo"
+			],
+			[
+				"Fo",
+				"ForoTema"
+			],
+			[
+				"id",
+				"id_usuario"
+			],
+			[
+				"sa",
+				"saveField"
+			],
+			[
+				"id_",
+				"id_usuario"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"la",
+				"layout"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"C",
+				"ComentarioForo"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"bord",
+				"border-style"
+			],
+			[
+				"in",
+				"inline-grid"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"curre",
+				"current_user"
+			],
+			[
+				"re",
+				"read"
+			],
+			[
+				"esle",
+				"else"
+			],
+			[
+				"cli",
+				"cliente_ip"
+			],
+			[
+				"arr",
+				"arreglo_datos"
+			],
+			[
+				"array_v",
+				"array_veces"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"al",
+				"alumnos"
+			],
+			[
+				"is",
+				"is_array"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"if",
+				"if	if …"
+			],
+			[
+				"show",
+				"showView"
+			],
+			[
+				"Contro",
+				"Controller"
+			],
+			[
+				"tablas",
+				"tablas_unefa"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"opera",
+				"operacion"
+			],
+			[
+				"Even",
+				"Evento"
+			],
+			[
+				"str",
+				"strong	Tag"
+			],
+			[
+				"boot",
+				"bootstrap-modal"
+			],
+			[
+				"boo",
+				"bootstrap-modal"
+			],
+			[
+				"Evento",
+				"EventosDato"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"ERROR",
+				"ERROR-DESCONEXION"
+			],
+			[
+				"dato",
+				"datos_1"
+			],
+			[
+				"ENVIO",
+				"ENVIO-CLAVE"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"cedula",
+				"cedula_formulario"
+			],
+			[
+				"cla",
+				"clave_formulario"
+			],
+			[
+				"unse",
+				"unset"
+			],
+			[
+				"edit",
+				"edit_clave2"
+			],
+			[
+				"clave",
+				"clave_corta"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"tipo",
+				"tipo_estuido"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"prin",
+				"print_r"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "js/carga_div.js",
+			"settings":
+			{
+				"buffer_size": 29485,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "package control",
+		"selected_items":
+		[
+			[
+				"package control",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/html/proyectos-de-otros/abraham/Control-Alevines",
+		"/var/www/html/proyectos-de-otros/abraham/Control-Alevines/js"
+	],
+	"file_history":
+	[
+		"/var/www/html/proyectos-de-otros/abraham/Control-Alevines/index.php",
+		"/var/www/html/mis-proyectos/DptoArchivo/Scripts/ajax.js",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/ForoSubforosController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/ForoCategoriasController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/webroot/js/funciones.js",
+		"/var/www/html/unefa_ce/app/Controller/AlumnosDatosImportantesController.php",
+		"/var/www/html/unefa_ce/app/Controller/CombosDependientesController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Layouts/ajax.ctp",
+		"/var/www/html/unefa_ce/app/View/Layouts/ajax.ctp",
+		"/var/www/html/unefa_ce/app/View/Layouts/jquery.ctp",
+		"/var/www/html/unefa_ce/app/webroot/js/funciones.js",
+		"/var/www/html/unefa_ce/app/webroot/js/funciones2.js",
+		"/var/www/html/unefa_ce/app/View/CombosDependientes/cargar_municipios_alumnosdatosimp.ctp",
+		"/var/www/html/unefa_ce/app/Controller/AlumnosDatosAcademicosController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoCategorias/add.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/AppController.php",
+		"/var/www/html/unefa_ce/app/View/Users/edit_clave2.ctp",
+		"/var/www/html/unefa_ce/app/View/Users/edit_clave.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoTemas/add.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoCategorias/index.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ComentarioForos/view.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Users/index.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/UsersController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Users/view.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Users/add.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Users/edit.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoTemas/index.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoCategorias/view.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/ForoTemasController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoTemas/view.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Model/User.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Users/login.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ComentarioForos/index.ctp",
+		"/var/www/html/unefa_ce_old/app/Controller/CarrerasController.php",
+		"/var/www/html/unefa_ce_old/app/Controller/UsersController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/Config/bootstrap.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Users/edit_clave.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Layouts/default.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Users/cargar_foto.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoTemas/edit.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoSubforos/add.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoSubforos/edit.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoCategorias/edit.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ComentarioForos/add.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ComentarioForos/edit.ctp",
+		"/var/www/html/unefa_ce/app/View/Users/index.ctp",
+		"/var/www/html/unefa_ce/app/View/AlumnosDatosAcademicos/edit.ctp",
+		"/var/www/html/unefa_ce/app/View/AlumnosDatosAcademicos/edit2.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/PagesController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/ComentarioForosController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoSubforos/index.ctp",
+		"/tmp/.fr-r9uLTq/see_it.155464263.js",
+		"/var/www/html/unefa_ce/app/Controller/EventosController.php",
+		"/home/pulidovpe/Descargas/sql5109870.sql",
+		"/var/www/html/mis-proyectos/foro-cake/foro-cake.sql",
+		"/var/www/html/mis-proyectos/foro-cake/app/Config/database.php",
+		"/var/www/html/unefa_ce/app/Config/database.php",
+		"/media/pulidovpe/Nailet/Datos/dfdfsdfs.txt",
+		"/var/www/html/unefa_ce/app/View/Eventos/view.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/README.md",
+		"/home/pulidovpe/Vídeos/Deadpool.2016.DVDRip.torrent/Deadpool.2016.DVDRip.torrent/Movie Password.txt",
+		"/home/pulidovpe/Dropbox/Cuentas/madre.txt",
+		"/var/www/html/mis-proyectos/foro-cake/app/Config/routes.php",
+		"/var/www/html/unefa_ce/app/Config/core.php",
+		"/var/www/html/unefa_ce/app/Controller/UsersController.php",
+		"/var/www/html/unefa_ce/app/View/Users/enviarEmailUser.ctp",
+		"/var/www/html/unefa_ce/app/View/Users/login.ctp",
+		"/var/www/html/unefa_ce/app/webroot/css/styles_menu_estudiantes.css",
+		"/var/www/html/unefa_ce/app/Model/User.php",
+		"/var/www/html/unefa_ce/app/Controller/EventosDatosController.php",
+		"/var/www/html/unefa_ce/app/View/Users/add.ctp",
+		"/home/pulidovpe/Dropbox/Trabajo/Manuales y Tips/GIT - comandos e instalacion.txt",
+		"/var/www/html/unefa-ce/app/Controller/AlumnosDatosAcademicosController.php",
+		"/var/www/html/mis-proyectos/sistema-base/contributors.txt",
+		"/home/pulidovpe/Escritorio/email2.txt",
+		"/home/pulidovpe/Escritorio/email1.txt",
+		"/var/www/html/unefa_ce/app/View/Inicios/index_principal_docente.ctp",
+		"/var/www/html/unefa_ce/app/Controller/IniciosController.php",
+		"/var/www/html/unefa_ce/app/View/MateriasDocentes/index_carga_academica.ctp",
+		"/var/www/html/unefa_ce/app/Controller/MateriasDocentesController.php",
+		"/var/www/html/unefa_ce/app/View/MateriasDocentes/index_modular.ctp",
+		"/var/www/html/unefa_ce/app/View/MateriasDocentes/seccionview_docente.ctp",
+		"/var/www/html/unefa-ce/app/Controller/UsersController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/Model/ComentarioForo.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/Model/ForoTema.php",
+		"/var/www/html/unefa_ce/app/View/Users/view.ctp",
+		"/var/www/html/unefa_ce/app/View/Users/edit.ctp",
+		"/home/pulidovpe/Escritorio/EventosController.php",
+		"/home/pulidovpe/Escritorio/UsersController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Layouts/bootstrap.ctp",
+		"/var/www/html/unefa_ce/app/View/HistoricoEvaluacionesDocentes/add.ctp",
+		"/var/www/html/unefa_ce/app/View/AlumnosDatosImportantes/add.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoSubforos/view.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/ForoIniciosController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/ForoInicios/index.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Model/Usuario.php",
+		"/var/www/html/unefa_ce/app/Controller/AppController.php",
+		"/var/www/html/unefa_ce/app/View/Layouts/bootstrap.ctp",
+		"/var/www/html/unefa_ce/app/View/Layouts/default.ctp",
+		"/var/www/html/unefa_ce/app/View/DatosPersonales/add.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Model/AppModel.php",
+		"/var/www/html/unefa_ce/app/Controller/AlumnosDatosImportantesPostsController.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Usuarios/view.ctp",
+		"/var/www/html/unefa_ce/app/View/Elements/msg.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Usuarios/login.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Usuarios/index.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Usuarios/edit.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/View/Usuarios/add.ctp",
+		"/var/www/html/mis-proyectos/foro-cake/app/Controller/UsuariosController.php",
+		"/var/www/html/unefa_ce/app/Model/AppModel.php",
+		"/var/www/html/mis-proyectos/foro-cake/app/Config/core.php",
+		"/var/www/html/unefa_ce/app/Config/bootstrap.php",
+		"/var/www/html/unefa-ce/app/View/Users/login.ctp",
+		"/var/www/html/unefa_ce/app/View/Users/edit_roll.ctp",
+		"/home/pulidovpe/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/var/www/html/mis-proyectos/foro-cake/composer.json",
+		"/var/www/html/mis-proyectos/foro-cake.sql",
+		"/var/www/html/mis-proyectos/cake-foro.sql",
+		"/var/www/html/mis-proyectos/composer.json",
+		"/var/www/html/mis-proyectos/cake-foro/composer.json",
+		"/var/www/html/unefa_ce/commits.txt",
+		"/var/www/html/unefa_ce/app/Controller/ConfigInscripcionesController.php",
+		"/var/www/html/unefa_ce/app/View/VistasSubs/indexsec.ctp",
+		"/var/www/html/unefa_ce/app/Controller/IngresController.php",
+		"/home/pulidovpe/Descargas/unefa-2016-02-19-12m.sql",
+		"/home/pulidovpe/Dropbox/Cuentas/numeros.txt",
+		"/var/www/html/unefa_ce/app/View/Eventos/index.ctp",
+		"/var/www/html/unefa_ce/app/View/Inicios/index2.ctp"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<div id=",
+			"iddocente",
+			"ajax",
+			"combo",
+			"muninicipio_select",
+			"municipios",
+			"combo",
+			"ajax",
+			"buscar",
+			"function index",
+			"index",
+			"buscar",
+			"desconectar",
+			"modified",
+			"find",
+			"firma",
+			"th>",
+			"echo 'Conectado';",
+			"style=\"border-color: black;\"",
+			"moderar",
+			"firma",
+			"Bloquea",
+			"Bloqueado",
+			"function edit",
+			"<?php echo h($comenta['users']['avatar']);?>",
+			"width: 100px;height: 100px;\">",
+			"$this->Html->link(__('| Eliminar |')",
+			"delete",
+			"function delete",
+			"avatar",
+			"Usted no está autorizado para realizar esa acción!",
+			"http://localhost/mis-proyectos/foro-cake",
+			"../../..",
+			"th>",
+			"/foro-cake/",
+			"if(($logged_in)&&",
+			"login",
+			"_sessionVar",
+			"Temas:",
+			"Temas",
+			"htmlentities",
+			"<td colspan=\"2\" style=\"border-color: black;\">",
+			"nl2br",
+			"value",
+			"Publicar nuevo tema",
+			"subforo1",
+			"id_subforo",
+			"Moderar",
+			"$id_foro",
+			"id_tema",
+			"editar",
+			"ForoSubforo",
+			"editar",
+			"$id_tema",
+			"$idtema",
+			"ForoSubforo",
+			"SubForo",
+			"date",
+			"logged_in",
+			"Responder al Tema",
+			"logged_in",
+			"if($logged_in):",
+			"if(($logged_in)&&($current_user['role']<3)):",
+			"logged_in",
+			"moderar",
+			"'add'",
+			"function edit",
+			"User",
+			"comenta",
+			"loadModel",
+			"$subforos",
+			"$foro",
+			"array",
+			"No se recibio",
+			"foroTema",
+			"view",
+			"Nuevo Tema",
+			"Nuevo",
+			"responder",
+			"0.8em",
+			"1em",
+			"rama",
+			"eliminar",
+			"subforo",
+			"ForoSubforo",
+			"'view'",
+			"pr($",
+			"'view'",
+			"'foroCategorias', 'action' => 'view'",
+			"function login",
+			"setFlash",
+			"email",
+			"function login",
+			"['User']['nombre']",
+			"['User']['name']",
+			"['User']['nombre']",
+			"$resultado",
+			"email",
+			" email",
+			"function email",
+			"function login",
+			"layout",
+			"$this->Session->setFlash",
+			"$msg",
+			"email",
+			"index_principal_docente",
+			"url1",
+			"index_carga",
+			"foroTemas",
+			"Paginator->",
+			"Paginator->set",
+			"BITACORA",
+			"date",
+			"$this->Paginator->paginate",
+			"password",
+			"BlowfishPasswordHasher",
+			"query",
+			"$this->Paginator->settings",
+			"'and'",
+			"and",
+			"Paginator",
+			"paginate",
+			"date",
+			"function add",
+			"saveField",
+			"login",
+			"hidde",
+			"load"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"id_busca",
+			"td>",
+			"echo 'En Linea';",
+			"<?php echo $this->Html->Image('../files/user/foto/' . $comenta['users']['foto_dir'] . '/' . 'thumb_' . $comenta['users']['foto']); ?>",
+			"width: 150px;height: 150px;\">",
+			"$this->Form->postLink(__('| Eliminar |')",
+			"$this->Html->postLink(__('| Eliminar |')",
+			"foto",
+			"/mis-proyectos/foro-cake",
+			"http://localhost/mis-proyectos/foro-cake",
+			"/mis-proyectos/foro-cake",
+			"/foro-cake",
+			"td>",
+			"/../../",
+			"/../",
+			"if(($logged_in)&&($current_user['role']<3)):",
+			"if($logged_in):",
+			"$subforo",
+			"0.9em",
+			"0.8em",
+			"",
+			"foroInicios",
+			"Auth.User.",
+			"h($users['User']",
+			"'User'",
+			"->User->",
+			"username",
+			"[0]",
+			"nickname",
+			"'Usuarios'",
+			"->Usuario->",
+			"'Usuario'",
+			"utf8",
+			"datos_nuevos",
+			"'0'",
+			"usuario",
+			"['tabla']",
+			"['modelo']",
+			"\"full-width\"",
+			"array('user_id' => $this->Session->read('Auth.User.id'),",
+			"'id_tabla' => $id",
+			"array('user_id' => $this->Session->read('Auth.User.id'),",
+			"array('user_id' => $this->Session->read('Auth.User.id),",
+			"'EDICION-",
+			"$this->layout = 'bootstrap2';",
+			"DESCONEXION",
+			"DESCONECTAR",
+			"CONECTAR",
+			"id_evento'",
+			"tama_clave",
+			"$rs",
+			"//require \"inc/dbConnect.php\";",
+			"$rs[",
+			"$usu",
+			"$r[",
+			"$r{"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "js/carga_div.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 29485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 12028.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "control-alevines.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

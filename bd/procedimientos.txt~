@@ -1,0 +1,48 @@
+Control de Alevines
+////////////// Procedimientos Almacenados Tabla usuarios ///////////////
+
+DROP PROCEDURE IF EXISTS piscicola.registrarse$$
+CREATE PROCEDURE piscicola.registrarse(in usuario1 varchar(10),in clave1 varchar(128),in tipo1 tinyint(4),in nombre1 varchar(25),in telefono1 varchar(11))
+BEGIN
+INSERT INTO piscicola.usuarios VALUES (usuario1,clave1,tipo1,nombre1,telefono1);
+END
+$$
+
+////////////// Procedimientos Almacenados Tabla productor ///////////////
+
+DROP PROCEDURE IF EXISTS piscicola.productor1$$
+CREATE PROCEDURE piscicola.productor1(in cedula1 int(10),in nombres1 varchar(30),in apellidos1 varchar(25),in razons1 varchar(5),in direccion1 varchar(50),in telefono1 varchar(20),in estados1 varchar(15),in municipios1 varchar(25))
+BEGIN
+INSERT INTO piscicola.productor VALUES (cedula1,nombres1,apellidos1,razons1,direccion1,telefono1,estados1,municipios1);
+END
+$$
+
+////////////// Procedimientos Almacenados Tabla proforma ///////////////
+
+DROP PROCEDURE IF EXISTS piscicola.proforma1$$
+CREATE PROCEDURE piscicola.proforma1(in id_fact1 int(6),in fecha1 date,in ced_prod1 int(10),in compra11 smallint(7),in compra21 smallint(7),in compra31 smallint(7),in compra41 smallint(7),in precio11 float(10.2),in precio21 float(10.2),in precio31 float(10.2),in precio41 float(10.2),in total1 float(10.2))
+BEGIN
+INSERT INTO piscicola.proforma VALUES (id_fact1,fecha1,ced_prod1,compra11,compra21,compra31,compra41,precio11,precio21,precio31,precio41,total1);
+END
+$$
+
+
+/////////////// TRIGGERS ////////////////////////
+
+DROP TRIGGER IF EXISTS piscicola.nueva_clave//
+CREATE TRIGGER piscicola.nueva_clave BEFORE INSERT ON `usuarios`
+FOR EACH ROW 
+BEGIN
+SET NEW.clave = MD5(NEW.clave);
+END
+//
+
+DROP TRIGGER IF EXISTS piscicola.cambia_clave//
+CREATE TRIGGER piscicola.cambia_clave BEFORE UPDATE ON `usuarios`
+FOR EACH ROW 
+BEGIN
+SET NEW.clave = MD5(NEW.clave);
+END
+//
+
+
