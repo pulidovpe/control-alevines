@@ -29,7 +29,11 @@ Abrir el navegador e ir a la url http://localhost/control-alevines
 - [x] Completar el back-end y el front-end
 
 ## Credits / Créditos
-Este proyecto, fue desarrollado por los Ingenieros: Abraham García - @github/aagb2006; Eriz Valladares; Maria Franco - y mi persona.
+Este proyecto, fue desarrollado por los Ingenieros: 
+- Abraham García @github/aagb2006 
+- Eriz Valladares 
+- Maria Franco 
+- y mi persona.
 
 ## License / Licencia
 Pulido V.P.E. – @github/pulidovpe – pulidovpe.dev@gmail.com
